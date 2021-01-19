@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: helloaspnetcore 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloaspnetcore
+  template:
+    metadata:
+      labels:
+        app: helloaspnetcore 
+    spec:
+      containers:
+        - name: helloaspnetcore 
+          image: pabloaks1.azurecr.io/helloaspnetcore
+          ports:
+          - containerPort: 80
